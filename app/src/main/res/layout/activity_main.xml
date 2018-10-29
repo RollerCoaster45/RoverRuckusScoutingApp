@@ -15,6 +15,10 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+
+
+
             <EditText
                 android:id="@+id/sheetName"
                 android:layout_width="240dp"
@@ -39,7 +43,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sheetName"
                 android:layout_marginStart="8dp" />
-
             <EditText
                 android:id="@+id/matchNumber"
                 android:layout_width="240dp"
@@ -65,7 +68,7 @@
                 android:textSize="15sp"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/RedAllianceLabel"
+                android:id="@+id/BlueAllianceLabel"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:text="Blue"
@@ -81,22 +84,30 @@
                 android:id="@+id/AllianceSwitch"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toRightOf="@id/RedAllianceLabel"
-                app:layout_constraintTop_toTopOf="@+id/RedAllianceLabel"
+                app:layout_constraintLeft_toRightOf="@id/BlueAllianceLabel"
+                app:layout_constraintTop_toTopOf="@+id/BlueAllianceLabel"
                 />
             <TextView
-                android:id="@+id/BlueAllianceLabel"
+                android:id="@+id/RedAllianceLabel"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:text="Red"
                 app:layout_constraintLeft_toRightOf="@+id/AllianceSwitch"
-                app:layout_constraintTop_toTopOf="@+id/RedAllianceLabel"
+                app:layout_constraintTop_toTopOf="@+id/BlueAllianceLabel"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginStart="0dp"
                 android:textSize="15sp"
                 android:textAlignment="center"
                 />
+
+
+
+
+
+
+
+
             <TextView
                 android:id="@+id/AutonomousLabel"
                 android:layout_width="240dp"
@@ -197,7 +208,17 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SamplingLabel"
                 android:textSize="15sp"
+                android:layout_marginLeft="8dp"
                 />
+
+
+
+
+
+
+
+
+
             <TextView
                 android:id="@+id/TeleOpLabel"
                 android:layout_width="240dp"
@@ -231,10 +252,11 @@
                 android:text="-"
                 app:layout_constraintLeft_toRightOf="@+id/SilverLabelCargo"
                 app:layout_constraintTop_toBottomOf="@+id/TeleOpLabel"
+                android:onClick = "updateClick"
                  />
             />
             <TextView
-                android:id="@+id/SilverCargo"
+                android:id="@+id/SilverCargoNumber"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:text="0"
@@ -251,14 +273,15 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:text="+"
-                app:layout_constraintLeft_toRightOf="@+id/SilverCargo"
+                app:layout_constraintLeft_toRightOf="@+id/SilverCargoNumber"
                 app:layout_constraintTop_toBottomOf="@+id/TeleOpLabel"
+                android:onClick = "updateClick"
                 />
             <TextView
                 android:id="@+id/GoldCargoLabel"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="Silver"
+                android:text="Gold Cargo"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/RemoveGoldCargo"
                 android:layout_marginLeft="8dp"
@@ -266,7 +289,6 @@
                 android:layout_marginStart="8dp"
                 android:textSize="15sp"
                 />
-
             <Button
                 android:id="@+id/RemoveGoldCargo"
                 android:layout_width="60dp"
@@ -274,9 +296,238 @@
                 android:text="-"
                 app:layout_constraintLeft_toRightOf="@+id/GoldCargoLabel"
                 app:layout_constraintTop_toBottomOf="@+id/SilverLabelCargo"
+                android:onClick = "updateClick"
                 />
-            />
+            <TextView
+                android:id="@+id/GoldCargoNumber"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@id/RemoveGoldCargo"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveGoldCargo"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/AddGoldCargo"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/GoldCargoNumber"
+                app:layout_constraintTop_toBottomOf="@+id/SilverLabelCargo"
+                android:onClick = "updateClick"
+                />
+            <TextView
+                android:id="@+id/SilverDepotLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Silver Depot"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveSilverDepot"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/RemoveSilverDepot"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                app:layout_constraintLeft_toRightOf="@+id/SilverDepotLabel"
+                app:layout_constraintTop_toBottomOf="@+id/GoldCargoLabel"
+                android:onClick = "updateClick"
+                />
+            <TextView
+                android:id="@+id/SilverDepotNumber"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@id/RemoveSilverDepot"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveSilverDepot"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/AddSilverDepot"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/SilverDepotNumber"
+                app:layout_constraintTop_toBottomOf="@+id/AddGoldCargo"
+                android:onClick = "updateClick"
+                />
+            <TextView
+                android:id="@+id/GoldDepotLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Gold Depot"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveGoldDepot"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/RemoveGoldDepot"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                app:layout_constraintLeft_toRightOf="@+id/GoldDepotLabel"
+                app:layout_constraintTop_toBottomOf="@+id/SilverDepotLabel"
+                android:onClick = "updateClick"
+                />
+            <TextView
+                android:id="@+id/GoldDepotNumber"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@id/RemoveGoldDepot"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveGoldDepot"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/AddGoldDepot"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/GoldDepotNumber"
+                app:layout_constraintTop_toBottomOf="@+id/SilverDepotLabel"
+                android:onClick = "updateClick"
+                />
 
+
+
+
+            <TextView
+                android:id="@+id/EndGameLabel"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="End Game"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GoldDepotLabel"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/EndPositionLabel"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="Ending Position"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EndGameLabel"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp" />
+            <Spinner
+                android:id="@+id/EndGameSpinner"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EndPositionLabel"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                />
+            <EditText
+                android:id="@+id/HangTime"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Time of Hang"
+                android:inputType="time"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/EndGameSpinner"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:id="@+id/ScoreLabel"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Score: "
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/HangTime"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                />
+
+            <TextView
+                android:id="@+id/ScoreNumber"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                app:layout_constraintLeft_toRightOf="@id/ScoreLabel"
+                app:layout_constraintBottom_toBottomOf="@+id/ScoreLabel"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                />
+
+
+            <CheckBox
+                android:id="@+id/FTAError"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="FTA Error"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ScoreNumber"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp" />
+
+            <EditText
+                android:id="@+id/AdditionalComments"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="15sp"
+                android:hint="Additional Comments"
+                android:inputType="text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/FTAError"
+                android:layout_marginStart="8dp" />
+            <EditText
+                android:id="@+id/Initials"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="15sp"
+                android:hint="Initials"
+                android:inputType="text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/AdditionalComments"
+                android:layout_marginStart="8dp" />
+            <Button
+                android:id="@+id/SubmitButton"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Initials"
+                android:onClick = "submit"
+                android:layout_marginLeft="8dp"
+                />
+            <Button
+                android:id="@+id/ResetButton"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                app:layout_constraintLeft_toRightOf="@+id/SubmitButton"
+                app:layout_constraintTop_toBottomOf="@+id/Initials"
+                android:onClick = "resetButtonClick"
+                />
+
+            />
             />
 
 
