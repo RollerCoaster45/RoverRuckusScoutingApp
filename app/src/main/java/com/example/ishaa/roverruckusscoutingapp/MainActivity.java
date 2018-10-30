@@ -33,7 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
     Switch AllianceSwitch, AutoStartSwitch;
 
-
+    int score = 0;
+    int silverCargoMinerals = 0;
+    int goldCargoMinerals = 0;
+    int silverDepotMinerals = 0;
+    int goldDepotMinerals = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,16 +90,6 @@ public class MainActivity extends AppCompatActivity {
         SamplingSpinner = (Spinner) findViewById(R.id.SamplingSpinner);
         EndGameSpinner = (Spinner) findViewById(R.id.EndGameSpinner);
 
-        ArrayAdapter<CharSequence> endGameAdapter = ArrayAdapter.createFromResource(this,
-                R.array.EndGameSpinnerItems, android.R.layout.simple_spinner_item);
-        ArrayAdapter<CharSequence> samplingAdapter = ArrayAdapter.createFromResource(this,
-                R.array.SamplingSpinnerItems, android.R.layout.simple_spinner_item);
-
-        endGameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        samplingAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        SamplingSpinner.setAdapter(samplingAdapter);
-        EndGameSpinner.setAdapter(endGameAdapter);
 
         SamplingSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -156,15 +150,6 @@ public class MainActivity extends AppCompatActivity {
             layout.width = width;
             widget.setLayoutParams(layout);
         }
-        /*
-        for(TextView textView:textViews){
-            textView.setTextColor(Color.BLACK);
-            textView.setTextSize(20);
-        }
-        for(CheckBox checkBox:checkBoxes){
-            checkBox.setTextColor(Color.BLACK);
-            checkBox.setTextSize(20);
-        }*/
 
     }
 
@@ -174,7 +159,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void update(){
-
+        SilverCargoNumber.setText(""+silverCargoMinerals);
+        GoldCargoNumber.setText(""+goldCargoMinerals);
+        SilverDepotNumber.setText(""+silverDepotMinerals);
+        GoldDepotNumber.setText(""+goldDepotMinerals);
+        this.calculateScore();
+        ScoreNumber.setText(""+score);
     }
 
     public void reset(){
@@ -182,30 +172,59 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addSilverCargo(View view){
-
+        silverCargoMinerals++;
+        update();
     }
     public void subSilverCargo(View view){
-
+        if(silverCargoMinerals>0) {
+            silverCargoMinerals--;
+            update();
+        }
     }
     public void addGoldCargo(View view){
-
+        goldCargoMinerals++;
+        update();
     }
     public void subGoldCargo(View view){
-
+        if(goldCargoMinerals>0){
+            goldCargoMinerals--;
+            update();
+        }
     }
     public void addSilverDepot(View view){
-
+        silverDepotMinerals++;
     }
     public void subSilverDepot(View view){
-
+        if(silverDepotMinerals>0){
+            silverDepotMinerals--;
+            update();
+        }
     }
     public void addGoldDepot(View view){
-
+        goldDepotMinerals++;
+        update();
     }
     public void subGoldDepot(View view){
-
+        if(goldDepotMinerals>0){
+            goldDepotMinerals++;
+            update();
+        }
     }
     public void updateClick(View view){
-
+        update();
+    }
+    public void calculateScore(){
+        score=0;
+        if(AutoLand.isChecked()){
+            score+=30;
+        }
+        if(AutoTeamMarker.isChecked()){
+            score+=15;
+        }
+        if(AutoPark.isChecked()){
+            score+=10;
+        }
+        score+=(goldCargoMinerals+silverCargoMinerals)*5;
+        score+=(goldDepotMinerals+silverDepotMinerals)*2;
     }
 }
