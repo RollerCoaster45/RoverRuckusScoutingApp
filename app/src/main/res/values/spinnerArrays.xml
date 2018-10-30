@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SamplingSpinnerItems">
+        <item>Nothing</item>
+        <item>1 Knocked off correctly</item>
+        <item>2 Knocked off correctly</item>
+        <item>1 Knocked off correctly 1 incorrectly</item>
+        <item>2 Knocked off incorrectly</item>
+    </string-array>
+
+    <string-array name="EndGameSpinnerItems">
+        <item>Nothing</item>
+        <item>Partially Parked</item>
+        <item>Fully Parked</item>
+        <item>Hanging</item>
+    </string-array>
+
+</resources>

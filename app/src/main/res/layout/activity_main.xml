@@ -82,7 +82,7 @@
                 />
             <Switch
                 android:id="@+id/AllianceSwitch"
-                android:layout_width="60dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toRightOf="@id/BlueAllianceLabel"
                 app:layout_constraintTop_toTopOf="@+id/BlueAllianceLabel"
@@ -98,7 +98,6 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginStart="0dp"
                 android:textSize="15sp"
-                android:textAlignment="center"
                 />
 
 
@@ -137,10 +136,11 @@
                 />
             <Switch
                 android:id="@+id/StartingSwitch"
-                android:layout_width="60dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toRightOf="@id/CraterStartLabel"
                 app:layout_constraintTop_toTopOf="@+id/CraterStartLabel"
+                android:textAlignment="center"
                 />
             <TextView
                 android:id="@+id/DepotStartLabel"
@@ -252,7 +252,7 @@
                 android:text="-"
                 app:layout_constraintLeft_toRightOf="@+id/SilverLabelCargo"
                 app:layout_constraintTop_toBottomOf="@+id/TeleOpLabel"
-                android:onClick = "updateClick"
+                android:onClick = "subSilverCargo"
                  />
             />
             <TextView
@@ -275,7 +275,7 @@
                 android:text="+"
                 app:layout_constraintLeft_toRightOf="@+id/SilverCargoNumber"
                 app:layout_constraintTop_toBottomOf="@+id/TeleOpLabel"
-                android:onClick = "updateClick"
+                android:onClick = "addSilverCargo"
                 />
             <TextView
                 android:id="@+id/GoldCargoLabel"
@@ -296,7 +296,7 @@
                 android:text="-"
                 app:layout_constraintLeft_toRightOf="@+id/GoldCargoLabel"
                 app:layout_constraintTop_toBottomOf="@+id/SilverLabelCargo"
-                android:onClick = "updateClick"
+                android:onClick = "subGoldCargo"
                 />
             <TextView
                 android:id="@+id/GoldCargoNumber"
@@ -316,7 +316,7 @@
                 android:text="+"
                 app:layout_constraintLeft_toRightOf="@+id/GoldCargoNumber"
                 app:layout_constraintTop_toBottomOf="@+id/SilverLabelCargo"
-                android:onClick = "updateClick"
+                android:onClick = "addGoldCargo"
                 />
             <TextView
                 android:id="@+id/SilverDepotLabel"
@@ -337,7 +337,7 @@
                 android:text="-"
                 app:layout_constraintLeft_toRightOf="@+id/SilverDepotLabel"
                 app:layout_constraintTop_toBottomOf="@+id/GoldCargoLabel"
-                android:onClick = "updateClick"
+                android:onClick = "subSilverDepot"
                 />
             <TextView
                 android:id="@+id/SilverDepotNumber"
@@ -357,7 +357,7 @@
                 android:text="+"
                 app:layout_constraintLeft_toRightOf="@+id/SilverDepotNumber"
                 app:layout_constraintTop_toBottomOf="@+id/AddGoldCargo"
-                android:onClick = "updateClick"
+                android:onClick = "addSilverDepot"
                 />
             <TextView
                 android:id="@+id/GoldDepotLabel"
@@ -378,7 +378,7 @@
                 android:text="-"
                 app:layout_constraintLeft_toRightOf="@+id/GoldDepotLabel"
                 app:layout_constraintTop_toBottomOf="@+id/SilverDepotLabel"
-                android:onClick = "updateClick"
+                android:onClick = "subGoldDepot"
                 />
             <TextView
                 android:id="@+id/GoldDepotNumber"
@@ -398,7 +398,7 @@
                 android:text="+"
                 app:layout_constraintLeft_toRightOf="@+id/GoldDepotNumber"
                 app:layout_constraintTop_toBottomOf="@+id/SilverDepotLabel"
-                android:onClick = "updateClick"
+                android:onClick = "addGoldDepot"
                 />
 
 
@@ -481,7 +481,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/ScoreNumber"
                 android:textSize="15sp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="0dp" />
+                android:layout_marginTop="0dp"
+                />
 
             <EditText
                 android:id="@+id/AdditionalComments"
