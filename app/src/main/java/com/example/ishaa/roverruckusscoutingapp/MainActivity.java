@@ -158,9 +158,9 @@ public class MainActivity extends AppCompatActivity {
         ViewGroup.LayoutParams layout;
         View[] quarterWidgets = {BlueAllianceLabel, RedAllianceLabel, CraterStartLabel, DepotStartLabel, SilverLabelCargo, SilverCargoNumber, GoldCargoLabel,
                 GoldCargoNumber, SilverDepotLabel, SilverDepotNumber, GoldDepotLabel, GoldDepotNumber, RemoveSilverCargo, RemoveGoldCargo, RemoveSilverDepot, RemoveGoldDepot, AddSilverCargo,
-                AddGoldCargo, AddSilverDepot, AddGoldDepot};
+                AddGoldCargo, AddSilverDepot, AddGoldDepot, AllianceSwitch, AutoStartSwitch};
 
-        View[] halfWidgets = {AllianceSwitch, AutoStartSwitch, Submit, Reset, ScoreLabel, ScoreNumber, SamplingLocationSpinner, SamplingLocationLabel};
+        View[] halfWidgets = {Submit, Reset, ScoreLabel, ScoreNumber, SamplingLocationSpinner, SamplingLocationLabel};
 
         View[] fullWidgets = {SheetName, TeamNumber, MatchNumber, AutonomousLabel, AllianceLabel, AutoLand, AutoTeamMarker, AutoPark, SamplingLabel, SamplingSpinner,
         TeleOpLabel, EndGameLabel, EndPositionLabel, EndGameSpinner, HangTime, FTAError, AdditionalComments, Initials};
