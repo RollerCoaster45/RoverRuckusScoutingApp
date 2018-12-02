@@ -1,4 +1,4 @@
-package com.example.ishaa.roverruckusscoutingapp;
+package com.wizardsexe.rockvillerobotics.roverruckusscoutingapp;
 
 import org.junit.Test;
 

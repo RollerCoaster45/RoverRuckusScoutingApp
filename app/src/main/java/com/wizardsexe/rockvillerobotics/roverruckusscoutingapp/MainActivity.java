@@ -1,9 +1,7 @@
-package com.example.ishaa.roverruckusscoutingapp;
+package com.wizardsexe.rockvillerobotics.roverruckusscoutingapp;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,9 +14,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import org.apache.poi.hssf.record.formula.functions.Match;
-import org.apache.poi.ss.usermodel.Sheet;
 
 public class MainActivity extends AppCompatActivity {
     TextView AllianceLabel, BlueAllianceLabel, RedAllianceLabel, AutonomousLabel, CraterStartLabel, DepotStartLabel,

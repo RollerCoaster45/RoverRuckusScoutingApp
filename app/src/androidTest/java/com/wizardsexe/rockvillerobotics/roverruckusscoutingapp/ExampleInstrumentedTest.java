@@ -1,4 +1,4 @@
-package com.example.ishaa.roverruckusscoutingapp;
+package com.wizardsexe.rockvillerobotics.roverruckusscoutingapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

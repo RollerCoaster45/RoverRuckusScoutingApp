@@ -1,11 +1,10 @@
-package com.example.ishaa.roverruckusscoutingapp;
+package com.wizardsexe.rockvillerobotics.roverruckusscoutingapp;
 
 /**
  * Created by Olavi Kamppari on 9/9/2015.
  */
 
 import android.content.Context;
-import android.inputmethodservice.Keyboard;
 import android.os.Environment;
 import android.util.Log;
 
